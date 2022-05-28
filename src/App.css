@@ -1,38 +1,178 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+
+:root{
+    --gray:#c7c7cd;
+    --offwhite:#f3f4f6;
+    --navbar-bg:black;
+    --gray-bg:#3c3c3c;
+    --card-headline:#231f20;
+    --card-subcontent:#616160;
+    --red:#ec2227;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/** body **/
+body{
+    font-family: 'Open Sans', sans-serif;
+    margin:0;    
+    background-color: var(--offwhite);
+}
+.header{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: black;
+    color:white;
+}
+.search-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 2rem;
+}
+@media(max-width:555px) {
+    .search-box{
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        margin:1rem;
+        box-sizing: border-box;
+    }
+}
+span{
+    color:var(--gray);
+}
+h1{
+    margin-left: 2rem;
+}
+.search-btn{
+    background-color:var(--red);
+    padding:6px 14px;
+    border:none;
+    color:white;
+    font-size: 16px;
+}
+input{
+    padding:6px 14px;
+    letter-spacing: 0.5px;
+    border:none;
+    outline:none;
+    margin:12px;
+    font-size:16px;
+    width:300px;
+}
+input:active{
+    border: none;
+    outline: none;
+}
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width:350px;
+    height:400px;
+    background-color:white;
+    margin:1rem;
+    box-sizing: border-box;
+    box-shadow:inset var(--gray-bg);
+    z-index: 10;
+    flex-basis: 20%;
+    -ms-flex:auto;
+
+}
+.body{
+    margin:2rem 60px;
+}
+.card-content{
+    padding:20px;
+}
+.slug{
+    color:var(--red);
+    letter-spacing: 2px;
+    font-size:12px;   
+    /* font-family: var(--secondary-font); */
+    text-transform: uppercase;
+    display: inline-block;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--red);
+    font-weight: bold;
+    margin-bottom:0;
+}
+.card-headline{
+    font-size:18px;
+    color:var(--card-headline);
+    font-family:var(--primary-font);
+
+}
+.publication{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    color:var(--card-subcontent);
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight:bold;
+    bottom:10px;
+    width:88%;
+    /* font-family:var(--secondary-font); */
+}
+.card-container-heading{
+    font-size: 22px;
+    margin:1rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+    display: inline-block;
+    border-bottom: 3px solid var(--red);
+}
+.cards-container{
+     max-width:100%;
+     margin:0 auto;
+     display:grid;
+     grid-template-columns:33% 33% 33%;
+     justify-content: space-evenly;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@media(max-width:1023px){
+    .cards-container{
+        grid-template-columns:1fr 1fr;
+    }
+    .card{
+        max-width:350px;
+        height:400px;
+    }
+    .body{
+        margin:2rem 40px;
+    }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media(max-width:769px){
+    .cards-container{
+        grid-template-columns:1fr 1fr;
+    }
+    .card{
+        width:300px;
+        height:400px;
+        margin-left:10px;
+    }
 }
-
-.App-link {
-  color: #61dafb;
+ 
+ @media(max-width:555px){
+     .cards-container{
+         grid-template-columns: 1fr;
+     }
+     .card{
+        max-width:350px;
+        height: 400px;
+    }
+    
+ }
+.row{
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+ }
+.markFav{
+    padding:0 1rem;
+    cursor: pointer;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Fav{
+    color:red;
 }
